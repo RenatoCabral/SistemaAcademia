@@ -1,0 +1,8 @@
+<?php
+include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
+protegePagina(); // Chama a função que protege a página
+
+include 'header.php';
+echo "Olá, " . $_SESSION['usuarioNome'];
+?>
+<a href="logout.php" >Logout</a>
