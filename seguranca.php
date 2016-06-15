@@ -11,9 +11,9 @@ $_SG['servidor'] = 'localhost';
 $_SG['usuario'] = 'root';
 $_SG['senha'] = '';
 $_SG['permissao'] = '';
-$_SG['banco'] = 'login';
+$_SG['banco'] = 'sistema_academia';
 
-$_SG['paginaLogin'] = 'login.php';
+$_SG['paginaLogin'] = 'index.html';
 $_SG['tabela'] = 'usuarios';
 
 // Verifica se precisa fazer a conexão com o MySQL
@@ -36,48 +36,6 @@ if ($_SG['abreSessao'] == true)
  *
  * @return bool - Se o usuário foi validado ou não (true/false)
  */
-
-//
-//function validaUsuario($usuario, $senha){
-//    global $_SG;
-//
-//    $cS = ($_SG['caseSensitive']) ? 'BINARY' : '';
-//
-//    // Usa a função addslashes para escapar as aspas
-//
-//    $nusuario = addslashes($usuario);
-//    $nsenha = addslashes($senha);
-//
-//    // Monta uma consulta SQL (query) para procurar um usuário
-//    $_SG['link'] = mysqli_connect($_SG['servidor'], $_SG['usuario'], $_SG['senha'],$_SG['banco']) or die("MYSQL: Não foi possível conectar-se ao servidor[".$_SG['servidor']."].");
-//
-//    $sql = "SELECT id, nome FROM ".$_SG['tabela']." WHERE ".$cS." usuario = '".$nusuario."' AND ".$cS." senha= '".$nsenha."' LIMIT 1";
-//
-////  var_dump($sql); die;
-//    $query = mysqli_query($_SG['link'], $sql);
-////    var_dump($query); die;
-//    $resultado = mysqli_fetch_assoc($query);
-////    var_dump($resultado); die;
-//
-//    // Verifica se encontrou algum registro
-//
-//    if (empty($resultado)){
-//        // Nenhum registro foi encontrado => o usuário é inválido
-//        return false;
-//    }else{
-//        $_SESSION['usuarioID'] = $resultado['id'];
-//        $_SESSION['usuarioNome'] = $resultado['nome'];
-//
-//        if ($_SG['validaSempre'] == true){
-//
-//            $_SESSION['usuarioLogin'] = $usuario;
-//            $_SESSION['usuarioSenha'] = $senha;
-//
-//        }
-//
-//        return true;
-//    }
-//}
 
 
 
@@ -135,6 +93,7 @@ function protegePagina(){
         }
     }
 }
+
 
 /**
  * Função para expulsar um visitante

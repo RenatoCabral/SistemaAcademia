@@ -2,7 +2,7 @@
 
 // Inclui o arquivo com o sistema de segurança
 
-require_once ("seguranca.php");
+require_once("seguranca.php");
 
 // Verifica se um formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -42,3 +42,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         expulsaVisitante();
     }
 }
+
+?>

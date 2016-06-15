@@ -13,10 +13,10 @@ echo "<p>teste</p>";
 
 
 ?>
-<a href='deslogar.php' class='btn btn-danger'>Deslogar</a>
+<a href='login/deslogar.php' class='btn btn-danger'>Deslogar</a>
 <?php
 if (isset($_SESSION['usuario']) OR isset($_SESSION['senha'])){
-    echo "<a href='deslogar.php' class='btn btn-primary'>Deslogar</a>";
+    echo "<a href='login/deslogar.php' class='btn btn-primary'>Deslogar</a>";
 }
 
 ?>
