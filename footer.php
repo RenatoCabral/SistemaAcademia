@@ -10,6 +10,19 @@
         interval: 5000 //changes the speed
     })
 
+
+    <!-- busca-->
+
+    $('#filter').keyup(function () {
+
+        var rex = new RegExp($(this).val(), 'i');
+        $('.searchable tr').hide();
+        $('.searchable tr').filter(function () {
+            return rex.test($(this).text());
+        }).show();
+
+    })
+
 <!-- Menu Toggle Script -->
 
     $("#menu-toggle").click(function(e) {

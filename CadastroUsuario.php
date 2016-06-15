@@ -1,6 +1,6 @@
 <?php
-//include("login/seguranca.php"); // Inclui o arquivo com o sistema de segurança
-//protegePagina(); // Chama a função que protege a página
+include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
+protegePagina(); // Chama a função que protege a página
 
 //include 'header.php';
 //echo "Olá, " . $_SESSION['usuarioNome'];
@@ -108,7 +108,7 @@ include ("header.php");
         $usuarios = new Usuario();
         $usuarios->setNome($_POST['nome']);
         $usuarios->setUsuario($_POST['usuario']);
-        $usuarios->setSenha(md5($_POST['senha']));
+        $usuarios->setSenha($_POST['senha']);
         $usuarios->setEmail($_POST['email']);
         $usuarios->setPermissao($_POST['permissao']);
         if (DaoUsuario::inserir($usuarios)) {
@@ -116,9 +116,21 @@ include ("header.php");
 
             ?>
             <br/><br/>
-
+            <!--
             <script>
                 sweetAlert("Inserido!", "Usuário cadastrado!", "success");
+            </script>
+            -->
+            <script>
+                swal({
+                    title: "Cadastro feito com sucesso!",
+                    text: "Você será redirecionado para a página principal, para acessar clicar em Entrar!",
+                    timer: 4000,
+                    showConfirmButton: false
+                },
+                    function(){
+                        window.location.href = 'index.html';
+                    });
             </script>
             <?php
         }

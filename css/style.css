@@ -28,6 +28,72 @@ body{
     color: #fff;
 }
 
+/*-------------tela admin-----------*/
+
+.admin-menu-superior{
+    background-color: #3b5998;
+    height: 150px;
+}
+
+.admin-menu-superior h1, p{
+    color: #fff;
+
+}
+
+.admin-menu-lateral{
+    background-color: #000!important;
+
+
+}
+
+.admin-cad-escola{
+    margin-top: 100px;
+    background-color: #67b3ff;
+    height: 300px;
+    margin-left: 20px;
+    border: 1px;
+}
+
+.admin-title-escola{
+    height: 150px;
+    background-color: #3b5998;
+}
+
+.nome-escola{
+    color: #ffffff;
+    text-align: center!important;
+}
+
+.nome-escola:hover{
+    color: #ffffff;
+}
+/*-------------------------*/
+
+/*--------------cadastros-------------*/
+.div-fora{
+    /*background-color: #4cae4c;*/
+    height: 170px;
+    margin-top: 40px;
+
+
+}
+
+.div-dentro{
+    background-color: #36a2ff;
+    width: 95%;
+    height: 170px;
+    margin: 0 auto;
+
+}
+/*-----------------------*/
+
+/*-----------tela Op locais de treino-------------*/
+
+.title_opLocalTreino{
+    background: #3b5998;
+    color: #fff;
+}
+
 /*login*/
 /****** LOGIN MODAL ******/
 .loginmodal-container {

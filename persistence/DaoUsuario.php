@@ -13,7 +13,7 @@ class DaoUsuario{
         $stmt ->bindValue(':nome', utf8_encode($usuarios->getNome()), PDO::PARAM_STR);
         $stmt ->bindValue(':usuario', utf8_encode($usuarios->getUsuario()), PDO::PARAM_STR);
         $stmt ->bindValue(':email', utf8_encode($usuarios->getEmail()), PDO::PARAM_STR);
-        $stmt ->bindValue(':senha', $usuarios->getSenha(), PDO::PARAM_STR);
+        $stmt ->bindValue(':senha', md5($usuarios->getSenha()), PDO::PARAM_STR);
         $stmt ->bindValue(':permissao', ($usuarios->getPermissao()), PDO::PARAM_STR);
 
         if($stmt->execute()){

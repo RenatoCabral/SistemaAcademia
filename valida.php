@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     // Detalhe: faz uma verificação com isset() pra saber se o campo foi preenchido
 
     $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : '';
-    $senha = (isset($_POST['senha'])) ? $_POST['senha'] : '';
+    $senha = (isset($_POST['senha'])) ? md5($_POST['senha']) : '';
 
 
 
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         }else{
             echo "tem e permissao é: ".$resultado['permissao'];
             if($resultado['permissao'] == 1)//é admin
-                header("Location: admin.php");
+                header("Location: administrador.php");
             if($resultado['permissao'] == 2)//é user
                 header("Location: user.php");
             return true;
