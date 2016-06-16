@@ -116,11 +116,6 @@ include ("header.php");
 
             ?>
             <br/><br/>
-            <!--
-            <script>
-                sweetAlert("Inserido!", "Usuário cadastrado!", "success");
-            </script>
-            -->
             <script>
                 swal({
                     title: "Cadastro feito com sucesso!",
