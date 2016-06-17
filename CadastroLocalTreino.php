@@ -1,17 +1,33 @@
 <?php
+include ("header.php");
 
+include ("footer.php");
 
 include_once 'persistence/DaoLocalDeTreino.php';
-//include_once 'beans/LocalTreino.php';
+
 
 if (isset($_POST['Salvar'])){
     $localtreino = new LocalTreino();
-    $localtreino->setNome($_POST['nome']);
-    $localtreino->setEndereco($_POST['endereco']);
-    $localtreino->setEstado($_POST['estado']);
-    $localtreino->setCidade($_POST['cidade']);
+    $localtreino->setNome(utf8_decode($_POST['nome']));
+    $localtreino->setEndereco(utf8_decode($_POST['endereco']));
+    $localtreino->setEstado(utf8_decode($_POST['estado']));
+    $localtreino->setCidade(utf8_decode($_POST['cidade']));
     if (DaoLocalDeTreino::inserir($localtreino)){
-            echo "inserido";
-        
+        ?>
+        <br/><br/>
+        <script>
+            swal("Good job!", "You clicked the button!", "success")
+        </script>
+        ?>
+        <?php
+        $redirect = "OpLocalDeTreino.php";
+        header("location:$redirect");
+
     }
 }
+
+?>
+
+
+
+

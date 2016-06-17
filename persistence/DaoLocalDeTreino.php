@@ -7,7 +7,7 @@ include_once $_SERVER['DOCUMENT_ROOT']. '/SistemaAcademia/persistence/bd/Conexao
 class DaoLocalDeTreino{
 
     public  static function inserir(LocalTreino $localtreino){
-        $sql = "INSERT INTO localdetreino (nome, endereco, cidade, estado) VALUES (:nome, :endereco, :cidade,:estado)";
+        $sql = "INSERT INTO localdetreino (nome, endereco, cidade, estado) VALUES (:nome, :endereco, :cidade, :estado)";
         $stmt = Conexao::getInstance()->prepare($sql);
         $stmt ->bindValue(':nome', utf8_encode($localtreino->getNome()), PDO::PARAM_STR);
         $stmt ->bindValue(':endereco', utf8_encode($localtreino->getEndereco()), PDO::PARAM_STR);
@@ -41,10 +41,11 @@ class DaoLocalDeTreino{
     }
 
     public static function listarLocalTreino($coluna = "id"){
-        $sql = "SELECT nome, endereco, cidade, estado FROM localdetreino ORDER BY ". $coluna;
+        $sql = "SELECT * FROM localdetreino ORDER BY ". $coluna;
         foreach(Conexao::getInstance()->query($sql) as $linha){
             $localtreino = new LocalTreino();
-            $localtreino ->setNome($linha['nome'])
+            $localtreino ->setId($linha['id'])
+                         ->setNome($linha['nome'])
                          ->setEndereco($linha['endereco'])
                          ->setCidade($linha['cidade'])
                         ->setEstado($linha['estado']);
@@ -65,22 +66,20 @@ class DaoLocalDeTreino{
         }
     }
 
-    public static function alterar(LocalTreino $localtreino) {
-        $sql = "UPDATE localdetreino "
-            . "SET nome = :nome, endereco=:endereco, cidade=:cidade, estado=:estado "
-            . "WHERE id=:id";
-        $stmt = Conexao::getInstance()->prepare($sql);
-        $stmt->bindValue(":nome", utf8_decode($localtreino->getNome()), PDO::PARAM_STR);
-        $stmt->bindValue(":endereco", utf8_decode($localtreino->getEndereco()), PDO::PARAM_STR);
-        $stmt->bindValue(":cidade", utf8_decode($localtreino->getCidade()), PDO::PARAM_STR);
-        $stmt->bindValue(":estado", utf8_decode($localtreino->getEstado()), PDO::PARAM_STR);
-        $stmt->bindValue(":id", $localtreino->getId(), PDO::PARAM_INT);
-        if ($stmt->execute()){
-            return true;
-        }else{
-            return false;
-        }
-    }
+//    public static function alterar(LocalTreino $localtreino) {
+//        $sql = "UPDATE localdetreino SET nome ='".$nome."', endereco= '".$endereco."' cidade= '".$cidade."' estado= '".$estado."' WHERE id=".$id;
+//        $stmt = Conexao::getInstance()->prepare($sql);
+//        $stmt->bindValue(":nome", utf8_decode($localtreino->getNome()), PDO::PARAM_STR);
+//        $stmt->bindValue(":endereco", utf8_decode($localtreino->getEndereco()), PDO::PARAM_STR);
+//        $stmt->bindValue(":cidade", utf8_decode($localtreino->getCidade()), PDO::PARAM_STR);
+//        $stmt->bindValue(":estado", utf8_decode($localtreino->getEstado()), PDO::PARAM_STR);
+//        $stmt->bindValue(":id", $localtreino->getId(), PDO::PARAM_INT);
+//        if ($stmt->execute()){
+//            return true;
+//        }else{
+//            return false;
+//        }
+//    }
 
 
 }
