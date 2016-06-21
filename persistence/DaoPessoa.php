@@ -1,10 +1,11 @@
 <?php
 
 include_once $_SERVER['DOCUMENT_ROOT']. '/SistemaAcademia/beans/Pessoa.php';
-
 include_once $_SERVER['DOCUMENT_ROOT']. '/SistemaAcademia/persistence/bd/Conexao.php';
 
 class DaoPessoa{
+
+
 
     public  static function inserir(Pessoa $pessoa){
         $sql = "INSERT INTO pessoa (nome, endereco, numero, complemento, bairro, estado, cidade, foto, data_cadastro) VALUES (:nome, :endereco, :numero, :complemento, :bairro, :estado, :cidade, :foto, :data_cadastro)";
@@ -18,7 +19,6 @@ class DaoPessoa{
         $stmt ->bindValue(':cidade', utf8_encode($pessoa->getCidade()), PDO::PARAM_STR);
         $stmt ->bindValue(':foto', utf8_encode($pessoa->getFoto()), PDO::PARAM_STR);
         $stmt ->bindValue(':data_cadastro', utf8_encode($pessoa->getDataCadastro()), PDO::PARAM_STR);
-        /*$stmt ->bindValue(':graduacao', ($alunos->getIdGraduacao()), PDO::PARAM_STR);*/
 
         if($stmt->execute()){
 
@@ -49,6 +49,8 @@ class DaoPessoa{
         }
     }
 
+
+
     public static function carregarDados($id){
         $sql = "SELECT * FROM pessoa WHERE id = :id";
         $stmt = Conexao::getInstance()->prepare($sql);
@@ -57,7 +59,7 @@ class DaoPessoa{
             $vetor_pessoa = $stmt->fetch(PDO::FETCH_ASSOC);
             $pessoa = new Pessoa();
             /*$pessoa->setId($vetor_pessoa['id'])*/
-                $pessoa->setNome($vetor_pessoa['nome'])
+            $pessoa->setNome($vetor_pessoa['nome'])
                 ->setEndereco($vetor_pessoa['endereco'])
                 ->setNumero($vetor_pessoa['numero'])
                 ->setComplemento($vetor_pessoa['complemento'])
@@ -66,7 +68,6 @@ class DaoPessoa{
                 ->setEstado($vetor_pessoa['estado'])
                 ->setFoto($vetor_pessoa['foto'])
                 ->setDataCadastro($vetor_pessoa['data_cadastro']);
-
             return $pessoa;
         }
     }

@@ -1,5 +1,7 @@
 <?php
 
+include 'Estados.php';
+
 class Pessoa{
     private $id;
     private $nome;
@@ -11,6 +13,7 @@ class Pessoa{
     private $cidade;
     private $foto;
     private $data_cadastro;
+    private $id_Estados;
     
     /**
      * @return mixed
@@ -185,6 +188,27 @@ class Pessoa{
     /**
      * @return mixed
      */
+    public function getIdEstados()
+    {
+        return $this->id_Estados;
+    }
+
+    /**
+     * @param mixed $id_Estados
+     */
+    public function setIdEstados($id_Estados)
+    {
+        $this->id_Estados = $id_Estados;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+
+
+
+
 
 
 

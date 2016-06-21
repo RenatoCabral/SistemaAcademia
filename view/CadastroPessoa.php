@@ -10,8 +10,10 @@ protegePagina(); // Chama a função que protege a página
 //echo "Olá, " . $_SESSION['usuarioNome'];
 
 include_once '../persistence/DaoPessoa.php';
+include_once '../persistence/DaoEstados.php';
 $pessoa = new Pessoa();
 $alterar = false;
+$lista_estados = DaoEstados::listarEstados();
 if(isset($_POST['Salvar'])) {
 
     $pessoa->setFoto($_POST['foto']);
@@ -23,6 +25,7 @@ if(isset($_POST['Salvar'])) {
     $pessoa->setCidade($_POST['cidade']);
     $pessoa->setEstado($_POST['estado']);
     $pessoa->setDataCadastro($_POST['data_cadastro']);
+    $pessoa->getEstado()->setId($_POST['estados']);
     if (DaoPessoa::inserir($pessoa)) {
 
         $redirect = "../tabelaPessoa.php";
@@ -152,6 +155,7 @@ if (isset($_GET)){
                         </div>
                     </div>
 
+
                     <div class="form-group">
                         <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
                             <label class="col-md-4 control-label" for="estado">Estado:</label>
@@ -187,7 +191,7 @@ if (isset($_GET)){
                             </select>
                         </div>
                     </div>
-
+                    
                     <!-- Password input-->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="cidade">Cidade</label>
