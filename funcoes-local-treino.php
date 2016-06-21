@@ -10,21 +10,25 @@ protegePagina(); // Chama a função que protege a página
   <?php include 'sidebar.php';?>
    <?php include 'header-admin.php'; ?>
 
+
 <div class="container">
     <?php
 
     include_once 'persistence/DaoLocalDeTreino.php';
 
-    if(isset($_GET['logout'])) {
-        unset($_SESSION["localtreino"]);
+    /*if(isset($_GET['logout'])) {
+       unset($_SESSION["usuario"]);
 
-        if (!isset($_SESSION['localtreino'])) {
+        if (!isset($_SESSION['usuario'])) {
+            header('Location:index.html');
         } else {
-            $localtreino = DaoLocalDeTreino::carregarDados(($_SESSION["localtreino"]));
+
+            $localtreino = DaoLocalDeTreino::carregarDados(($_SESSION["localdetreino"]));
             if (isset($_GET['op'])) {
                 if ($_GET['op'] == "excluir") {
 
                     if (DaoLocalDeTreino::excluir($_GET['id'])) {
+
                         ?>
 
                         <script>
@@ -34,7 +38,7 @@ protegePagina(); // Chama a função que protege a página
                                     type: "success"
                                 },
                                 function () {
-                                    window.location.href = 'OpLocalDeTreino.php';
+                                    window.location.href = 'funcoes-local-treino.php';
                                 });
                         </script>
                         <?php
@@ -43,6 +47,8 @@ protegePagina(); // Chama a função que protege a página
             }
         }
     }
+    */
+
     ?>
 
     <h3 class="pager title_opLocalTreino">Locais de Treino</h3>
@@ -57,6 +63,7 @@ protegePagina(); // Chama a função que protege a página
     <table class="table table-striped">
         <thead>
         <tr>
+            
             <th>Nome</th>
             <th>Endereco</th>
             <th>Cidade</th>
@@ -67,15 +74,16 @@ protegePagina(); // Chama a função que protege a página
         <tbody class="searchable">
 
         <?php  foreach ((array)$listarLocalTreino as $lt) {
-            $newId = $lt->getId();
-            echo "<tr><td>ID:  ". $newId." - ".  utf8_decode($lt->getNome()) . "</td>";
+
+            echo "<tr><td>" .utf8_decode($lt->getNome()) ."</td>";
             echo "<td>" . utf8_decode($lt->getEndereco()) . "</td>";
             echo "<td>" . utf8_decode($lt->getCidade()) . "</td>";
             echo "<td>" . utf8_decode($lt->getEstado()) . "</td>";
+            $newId = ($lt->getId());
 
             echo "<td>
-                    <a class='btn btn-danger' href='OpLocalDeTreino.php?id=" . $newId . "&op=excluir'>Excluir</a>
-                     <a class='btn btn-primary'  data-toggle=\"modal\" data-target=\"#alterar\" href='#?id={$newId}'>Alterar</a>
+                    <a class='btn btn-danger' href='funcoes-local-treino.php?id=" . $newId . "&op=excluir'>Excluir</a>
+                     <a class='btn btn-primary'  href='FormAlteraLocalTreino.php?id=" .$newId. "'>Editar</a>
                      <!--<a class='btn btn-default' data-toggle=\"modal\" data-target=\"#contact\" href='CadastroLocalTreino'>Cadastrar</a>-->
          
                     </td>
@@ -94,11 +102,11 @@ protegePagina(); // Chama a função que protege a página
             <?php
         }
         ?>
-        <a class='btn btn-default' data-toggle="modal" data-target="#cadastro" href='CadastroLocalTreino.php'>Cadastrar</a>
+        <a class='btn btn-default' href='CadastroLocalTreino.php'>Cadastrar</a>
 
-        <?php include 'modal-cadastro-local-treino.php'; ?>
+        <?php include 'CadastroLocalTreino.php'; ?>
 
-        <?php include 'modal-altera-local-treino.php'; ?>
+        <?php include 'FormAlteraLocalTreino.php'; ?>
 
 
-<?php include ("footer.php");?>
+<?php include 'footer.php'; ?>

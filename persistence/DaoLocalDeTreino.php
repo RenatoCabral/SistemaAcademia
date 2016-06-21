@@ -34,14 +34,14 @@ class DaoLocalDeTreino{
                         ->setNome($vetor_localtreino['nome'])
                         ->setEndereco($vetor_localtreino['endereco'])
                         ->setCidade($vetor_localtreino['cidade'])
-                        ->setEstado($vetor_localtreino['estdado']);
+                        ->setEstado($vetor_localtreino['estado']);
 
             return $localtreino;
         }
     }
 
     public static function listarLocalTreino($coluna = "id"){
-        $sql = "SELECT * FROM localdetreino ORDER BY ". $coluna;
+        $sql = "SELECT id, nome, endereco, cidade, estado FROM localdetreino ORDER BY ". $coluna;
         foreach(Conexao::getInstance()->query($sql) as $linha){
             $localtreino = new LocalTreino();
             $localtreino ->setId($linha['id'])
@@ -59,10 +59,12 @@ class DaoLocalDeTreino{
         $sql = "DELETE FROM localdetreino WHERE id = :id";
         $stmt = Conexao::getInstance()->prepare($sql);
         $stmt->bindValue(":id", $id , PDO::PARAM_INT);
-        //$stmt->bindValue(":id", $id_remove, PDO::PARAM_INT);
         $retorno = $stmt->execute();
         if ($retorno){
-            return true;
+            if ($retorno -> rowCount()>0){
+                return true;
+            }
+            return false;
         }
     }
 

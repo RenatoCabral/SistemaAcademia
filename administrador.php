@@ -10,8 +10,11 @@ protegePagina(); // Chama a função que protege a página
 
 <div id="wrapper">
 
+    <?php include 'sidebar.php'; ?>
+    <?php include 'header-admin.php'; ?>
+
     <!-- Sidebar -->
-    <div id="sidebar-wrapper" class="admin-menu-lateral">
+    <!--<div id="sidebar-wrapper" class="admin-menu-lateral">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
                 <a href="#">
@@ -44,7 +47,7 @@ protegePagina(); // Chama a função que protege a página
     <!-- /#sidebar-wrapper -->
 
     <!-- Page Content -->
-    <div id="page-content-wrapper" class="admin-menu-superior">
+   <!-- <div id="page-content-wrapper" class="admin-menu-superior">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -54,7 +57,7 @@ protegePagina(); // Chama a função que protege a página
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- /#page-content-wrapper -->
 
     <div class="col-sm-6 col-md-4 admin-cad-escola">

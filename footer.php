@@ -8,7 +8,7 @@
 <script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
-    })
+    });
 
 
     <!-- busca-->
@@ -21,7 +21,7 @@
             return rex.test($(this).text());
         }).show();
 
-    })
+    });
 
 <!-- Menu Toggle Script -->
 

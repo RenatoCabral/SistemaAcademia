@@ -13,26 +13,60 @@
 
 body{
     padding-top: inherit!important;
+    /*background-color: rgba(210, 210, 210, 0.19) !important;*/
+    /*background-color: #EEE!important;*/
+
 
 }
 
-.tela_cadastro{
-    /*background-color: #3b5998;*/
-    /* margin: 12px; */
+.tela_cadastro, .altera_cadastro_local_treino{
     margin-top: 50px;
 }
 
-.title_cadUser{
+
+.title_cadPessoa, .title_altera_local_treino{
     text-align: center;
     background: #3b5998;
     color: #fff;
 }
 
+#appearance-select{
+    -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
+    -moz-appearance: none; /* Remove estilo padrão do FireFox */
+    appearance: none; /* Remove estilo padrão do FireFox*/
+    background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;  /* Imagem de fundo (Seta) */
+    background-position: 218px center;  /*Posição da imagem do background*/
+    width: 250px; /* Tamanho do select, maior que o tamanho da div "div-select" */
+    height:30px; /* Altura do select, importante para que tenha a mesma altura em todo os navegadores */
+    border:1px solid #ddd;
+
+}
+
+/*------------icons sidebar---------------------------------*/
+.fa-desktop, .fa-group, .fa-envelope, .fa-graduation-cap, .fa-institution, .fa-user, .fa-sign-out, .fa-building-o{
+    padding-right: 25px;
+}
+
+.btn-danger, .btn-primary,.btn-default, .btn-info{
+    font-size: 23px;
+
+}
+
+.btn-default{
+    float: right;
+
+}
+
+.button-add-pessoa{
+    float: right;
+}
+/*---------------------------------------------------*/
+
 /*-------------tela admin-----------*/
 
 .admin-menu-superior{
     background-color: #3b5998;
-    height: 150px;
+    height: 80px;
 }
 
 .admin-menu-superior h1, p{
@@ -41,8 +75,7 @@ body{
 }
 
 .admin-menu-lateral{
-    background-color: #000!important;
-
+    background-color: #333333!important;
 
 }
 
@@ -66,6 +99,10 @@ body{
 
 .nome-escola:hover{
     color: #ffffff;
+}
+
+.li-externa-sidebar{
+    padding: 9px;
 }
 /*-------------------------*/
 
@@ -212,4 +249,11 @@ body{
 .login-help{
     font-size: 12px;
 }
+
+/*------------------Jumbotron------------*/
+.msg-jumbotron{
+    color: #000000;
+}
+
+
 
