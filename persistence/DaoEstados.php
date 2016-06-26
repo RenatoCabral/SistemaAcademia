@@ -7,7 +7,7 @@ class DaoEstados{
 
 
     public static function listarEstados($coluna = "id"){
-        $sql = "SELECT id, nome FROM estados ORDER BY  " . $coluna;
+        $sql = "SELECT id, nome FROM estados ORDER BY " . $coluna;
         foreach (Conexao::getInstance()->query($sql) as $linha){
             $estados = new Estados();
             $estados->setId($linha['id'])

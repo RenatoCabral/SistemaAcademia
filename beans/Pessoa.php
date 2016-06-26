@@ -13,8 +13,38 @@ class Pessoa{
     private $cidade;
     private $foto;
     private $data_cadastro;
-    private $id_Estados;
-    
+    private $estados;
+
+    /**
+     * Pessoa constructor.
+     * @param $id
+     * @param $nome
+     * @param $endereco
+     * @param $numero
+     * @param $complemento
+     * @param $bairro
+     * @param $estado
+     * @param $cidade
+     * @param $foto
+     * @param $data_cadastro
+     * @param $estados
+     */
+    public function __construct()
+    {
+        $this->id = 0;
+        $this->nome = "";
+        $this->endereco = "";
+        $this->numero = "";
+        $this->complemento = "";
+        $this->bairro = "";
+        $this->estado = "";
+        $this->cidade = "";
+        $this->foto = "";
+        $this->data_cadastro = "";
+        $this->estados = new Estados();
+    }
+
+
     /**
      * @return mixed
      */
@@ -186,32 +216,22 @@ class Pessoa{
     }
 
     /**
-     * @return mixed
+     * @return Estados
      */
-    public function getIdEstados()
+    public function getEstados()
     {
-        return $this->id_Estados;
+        return $this->estados;
     }
 
     /**
-     * @param mixed $id_Estados
+     * @param Estados $estados
      */
-    public function setIdEstados($id_Estados)
+    public function setEstados($estados)
     {
-        $this->id_Estados = $id_Estados;
-        return $this;
+        $this->estados = $estados;
     }
 
     /**
      * @return mixed
      */
-
-
-
-
-
-
-
-
-
 }

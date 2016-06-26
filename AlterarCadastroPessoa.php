@@ -3,17 +3,20 @@
 
 <?php
 
-include("../seguranca.php"); // Inclui o arquivo com o sistema de segurança
+include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
 protegePagina(); // Chama a função que protege a página
 
 //include 'header.php';
 //echo "Olá, " . $_SESSION['usuarioNome'];
 
-include_once '../persistence/DaoPessoa.php';
-include_once '../persistence/DaoEstados.php';
+include_once 'persistence/DaoPessoa.php';
+include_once 'persistence/DaoEstados.php';
 $pessoa = new Pessoa();
 $alterar = false;
+
 $lista_estados = DaoEstados::listarEstados();
+//var_dump($lista_estados);
+
 if(isset($_POST['Salvar'])) {
 
     $pessoa->setFoto($_POST['foto']);
@@ -23,29 +26,29 @@ if(isset($_POST['Salvar'])) {
     $pessoa->setBairro($_POST['bairro']);
     $pessoa->setComplemento($_POST['complemento']);
     $pessoa->setCidade($_POST['cidade']);
-    $pessoa->setEstado($_POST['estado']);
+//    $pessoa->setEstado($_POST['estado']);
     $pessoa->setDataCadastro($_POST['data_cadastro']);
-    $pessoa->getEstado()->setId($_POST['estados']);
+    $pessoa->getEstado()->setId($_POST['estado']);
     if (DaoPessoa::inserir($pessoa)) {
 
-        $redirect = "../tabelaPessoa.php";
-        header("location: $redirect");
+        //$redirect = "../tabelaPessoa.php";
+        //header("location: $redirect");
 
         ?>
-<!--
-        <br/><br/>
-        <script>
-            swal({
-                    title: "Cadastro feito com sucesso!",
-                    text: "Você será redirecionado para a página principal, para acessar clicar em Entrar!",
-                    timer: 3000,
-                    showConfirmButton: false
-                },
-                function(){
-                    window.location.href = '../tabelaPessoa.php';
-                });
-        </script>
--->
+        <!--
+                <br/><br/>
+                <script>
+                    swal({
+                            title: "Cadastro feito com sucesso!",
+                            text: "Você será redirecionado para a página principal, para acessar clicar em Entrar!",
+                            timer: 3000,
+                            showConfirmButton: false
+                        },
+                        function(){
+                            window.location.href = '../tabelaPessoa.php';
+                        });
+                </script>
+        -->
         <?php
     }
 }
@@ -71,12 +74,12 @@ if (isset($_GET)){
 
     <title>Sistema Acadêmia</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/modern-business.css">
-    <link rel="stylesheet" href="../css/simple-sidebar.css">
-    <link rel="stylesheet" href="../css/sweetalert.css">
-    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/modern-business.css">
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
 
 </head>
@@ -85,8 +88,8 @@ if (isset($_GET)){
 
 <div id="wrapper">
 
-    <?php include '../sidebar.php';?>
-    <?php include '../header-admin.php'; ?>
+    <?php include 'sidebar.php';?>
+    <?php include 'header-admin.php'; ?>
 
     <div class="container">
 
@@ -96,13 +99,13 @@ if (isset($_GET)){
                 <fieldset class="tela_cadastro">
 
                     <!-- Form Name -->
-                    <legend class="title_cadPessoa">Cadastro de Pessoas</legend>
+                    <legend class="title_cadPessoa">Alterar Usuário</legend>
 
                     <!-- Appended Input-->
 
                     <div class="form-group">
                         <div class="col-md-12">
-                            <a href="../tabelaPessoa.php" class="btn btn-default" name="voltar"><span class="glyphicon glyphicon-arrow-left"></span>Voltar</a>
+                            <a href="tabelaPessoa.php" class="btn btn-default" name="voltar"><span class="glyphicon glyphicon-arrow-left"></span>Voltar</a>
                         </div>
                     </div>
 
@@ -111,7 +114,6 @@ if (isset($_GET)){
                         <label class="col-md-4 control-label" for="foto">Foto</label>
                         <div class="col-md-6">
                             <input id="foto" name="foto" type="file" placeholder="Foto" class="form-control input-md" value="<?php echo $pessoa->getFoto(); ?>"/>
-
                         </div>
                     </div>
 
@@ -159,39 +161,25 @@ if (isset($_GET)){
                     <div class="form-group">
                         <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
                             <label class="col-md-4 control-label" for="estado">Estado:</label>
-                            <select name="estado" id="appearance-select">
-                                <option>Selecione</option>
-                                <option value="AC">Acre</option>
-                                <option value="AL">Alagoas</option>
-                                <option value="AP">Amapa</option>
-                                <option value="AM">Amazonas</option>
-                                <option value="BA">Bahia</option>
-                                <option value="CE">Ceara</option>
-                                <option value="DF">Distrito Federal</option>
-                                <option value="ES">Espirito Santo</option>
-                                <option value="GO">Goias</option>
-                                <option value="MA">Maranhao</option>
-                                <option value="MT">Mato Grosso</option>
-                                <option value="MS">Mato Grosso do Sul</option>
-                                <option value="MG">Minas Gerais</option>
-                                <option value="PA">Para</option>
-                                <option value="PB">Paraiba</option>
-                                <option value="PR">Parana</option>
-                                <option value="PE">Pernambuco</option>
-                                <option value="PI">Piaui</option>
-                                <option value="RJ">Rio de Janeiro</option>
-                                <option value="RN">Rio Grande do Norte</option>
-                                <option value="RS">Rio Grande do Sul</option>
-                                <option value="RO">Rondonia</option>
-                                <option value="RR">Roraima</option>
-                                <option value="SC">Santa Catarina</option>
-                                <option value="SP">Sao Paulo</option>
-                                <option value="SE">Sergipe</option>
-                                <option value="TO">Tocantins</option>
-                            </select>
+
+                            <?php
+                            echo $pessoa->getEstado();
+                            var_dump($lista_estados); die;
+                            echo "<select name='estado' id='appearance-select'>";
+                            foreach ($lista_estados as $c){
+
+//                                if ($pessoa->getEstado()->getId() == $c->getId()){
+//                                    echo "<option value='".$c->getId()."' selected>".$c->getNome()."</option>\n";
+//                                }else{
+//                                    echo "<option value='".$c->getId()."'>".$c->getNome()."</option>\n";
+//                                }
+                            }
+                            echo "</select>";
+                            ?>
+
                         </div>
                     </div>
-                    
+
                     <!-- Password input-->
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="cidade">Cidade</label>
@@ -210,7 +198,7 @@ if (isset($_GET)){
                     <!-- Button (Double) -->
                     <div class="form-group">
                         <div class="col-md-8">
-                            <a href="../tabelaPessoa.php" class="btn btn-danger" name="cancelar"><span class="glyphicon glyphicon-remove"></span>Cancelar</a>
+                            <a href="tabelaPessoa.php" class="btn btn-danger" name="cancelar"><span class="glyphicon glyphicon-remove"></span>Cancelar</a>
                             <button id="salvar" name="Salvar" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>Salvar</button>
                         </div>
                     </div>
@@ -222,9 +210,9 @@ if (isset($_GET)){
         </div>
     </div>
 
-    <script src="../js/jquery-2.2.3.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/sweetalert.min.js"></script>
+    <script src="/js/jquery-2.2.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/sweetalert.min.js"></script>
 
 
     <!-- Script to Activate the Carousel -->
@@ -260,50 +248,5 @@ if (isset($_GET)){
 </html>
 
 
-<?php
-/*
-    include_once '../persistence/DaoPessoa.php';
-    $pessoa = new Pessoa();
-    $alterar = false;
-        if(isset($_POST['Salvar'])) {
-
-            $pessoa->setFoto($_POST['foto']);
-            $pessoa->setNome($_POST['nome']);
-            $pessoa->setEndereco($_POST['endereco']);
-            $pessoa->setNumero($_POST['numero']);
-            $pessoa->setBairro($_POST['bairro']);
-            $pessoa->setComplemento($_POST['complemento']);
-            $pessoa->setCidade($_POST['cidade']);
-            $pessoa->setEstado($_POST['estado']);
-            $pessoa->setDataCadastro($_POST['data_cadastro']);
-            if (DaoPessoa::inserir($pessoa)) {
-
-
-                ?>
-                <br/><br/>
-                <script>
-                    swal({
-                            title: "Cadastro feito com sucesso!",
-                            /*text: "Você será redirecionado para a página principal, para acessar clicar em Entrar!",*/
-/*                            timer: 1000,
-                            showConfirmButton: false
-                        },
-                        function(){
-                            //*window.location.href = 'funcoes-local-treino.php';*/
- /*                           window.location.href = 'CadastroPessoa.php';
-                        });
-                </script>
-                <?php
-            }
-        }
-        if (isset($_GET)){
-            if (isset($_GET['op'])== 'atualizar'){
-                $alterar = true;
-
-                $pessoa = DaoPessoa::carregarDados($_GET['id']);
-                /*echo "alterado";*/
-            //}
-       // }
-    ?>
 
 

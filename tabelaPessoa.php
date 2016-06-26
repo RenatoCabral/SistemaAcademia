@@ -16,7 +16,7 @@ protegePagina(); // Chama a função que protege a página
     <div class="container">
         <?php
 
-        include_once 'persistence/DaoPessoa.php';
+        include_once 'persistence/Daopessoa.php';
 
         ?>
 
@@ -31,7 +31,7 @@ protegePagina(); // Chama a função que protege a página
         <br>
 
         <div class="col-lg-12">
-            <a class='btn btn-primary button-add-pessoa' href='./view/CadastroPessoa.php'><span class="glyphicon glyphicon-plus"></span>Adicionar</a>
+            <a class='btn btn-primary button-add-pessoa' href='./view/cadastropessoa.php'><span class="glyphicon glyphicon-plus"></span>Adicionar</a>
         </div>
         <br>
 
@@ -69,7 +69,7 @@ protegePagina(); // Chama a função que protege a página
                 $newId = ($lp->getId());
                 echo "<td>
                     <a href='tabelaPessoa.php?id=" . $newId . "&op=excluir'><button class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\" ></span>Excluir</button></a>
-                     <a href='./view/CadastroPessoa.php?id=" . $newId . "&op=atualizar'><button class='btn btn-info'><span class=\"glyphicon glyphicon-pencil\"></span>Editar</button></a>
+                     <a href='AlterarCadastroPessoa.php?id=" . $newId . "&op=atualizar'><button class='btn btn-info'><span class=\"glyphicon glyphicon-pencil\"></span>Editar</button></a>
                      <!--<a class='btn btn-default' data-toggle=\"modal\" data-target=\"#contact\" href='CadastroLocalTreino'>Cadastrar</a>-->
                      
          
@@ -86,7 +86,7 @@ protegePagina(); // Chama a função que protege a página
                     <p class="msg-jumbotron">Não existe usuários cadastrados no momento. Para efetuar o cadastro clique no botão Adicionar!</p>
                 </div>
 
-                <a class='btn btn-primary' href='./view/CadastroPessoa.php'><span class="glyphicon glyphicon-plus"></span>Adicionar</a>
+                <a class='btn btn-primary' href='./view/cadastropessoa.php'><span class="glyphicon glyphicon-plus"></span>Adicionar</a>
 
                 <?php
             }
