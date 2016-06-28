@@ -33,7 +33,7 @@ mysqli_query($conection, $update_sql);
             showConfirmButton: false
         },
         function(){
-            window.location.href = 'funcoes-local-treino.php';
+            window.location.href = 'tabela-local-treino.php';
         });
     /*swal({
         title: "Alterado",

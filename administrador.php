@@ -13,59 +13,41 @@ protegePagina(); // Chama a função que protege a página
     <?php include 'sidebar.php'; ?>
     <?php include 'header-admin.php'; ?>
 
-    <!-- Sidebar -->
-    <!--<div id="sidebar-wrapper" class="admin-menu-lateral">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="#">
-                    Start Bootstrap
-                </a>
-            </li>
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Shortcuts</a>
-            </li>
-            <li>
-                <a href="#">Overview</a>
-            </li>
-            <li>
-                <a href="#">Events</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-        </ul>
-    </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-   <!-- <div id="page-content-wrapper" class="admin-menu-superior">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">Menu</a>
-                    <h1>Escolas de Artes Marciais</h1>
-                    <p>Gerencie suas Academias de Artes Marciais</p>
-                </div>
-            </div>
-        </div>
-    </div>-->
-    <!-- /#page-content-wrapper -->
 
     <div class="col-sm-6 col-md-4 admin-cad-escola">
         <div class="admin-title-escola">
             <a href="CadastrosAdmin.php" class="nome-escola">S.I.G.L.A - Nome da Escola de Artes Marciais</a>
+        </div>
+    </div>
 
+    <div class="col-sm-6 col-md-2 admin-cad-escola">
+        <div class="col-sm-12 div-interna-qtd">
+            <h2><a class="title-qtd-pessoas" href="tabelaPessoa.php">Quantidade de pessoas cadastradas</a></h2>
         </div>
 
+        <div class=" col-sm-12 painel_qtd">
+            <?php
+                $con=mysqli_connect("localhost","root","", "sistema_academia");
+                $sql = mysqli_query($con, "SELECT *FROM pessoa");
+                $total = mysqli_num_rows($sql);
+                echo "<p class='vlr_qtd'> $total </p>";
+            ?>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-2 admin-cad-escola">
+        <div class="col-sm-12 div-interna-qtd">
+            <h2 class="title-qtd-pessoas">Quantidade de locais de treino</h2>
+        </div>
+
+        <div class=" col-sm-12 painel_qtd">
+            <?php
+                $con=mysqli_connect("localhost","root","", "sistema_academia");
+                $sql = mysqli_query($con, "SELECT *FROM localdetreino");
+                $total = mysqli_num_rows($sql);
+            echo "<p class='vlr_qtd'> $total </p>";
+            ?>
+        </div>
     </div>
 
 </div>

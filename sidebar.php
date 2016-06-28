@@ -11,7 +11,7 @@
             </a>
         </li>
         <li class="li-externa-sidebar">
-           <a href="#">
+           <a href="administrador.php">
                <i class="fa fa-desktop fa-lg" style="font-size: 24px"></i>Painel
 
            </a>
@@ -28,7 +28,7 @@
             </a>
         </li>
         <li class="li-externa-sidebar">
-            <a href="funcoes-local-treino.php">
+            <a href="tabela-local-treino.php">
                 <i class="fa fa-institution fa-lg" style="font-size: 24px"></i>Local de Treino
             </a>
         </li>

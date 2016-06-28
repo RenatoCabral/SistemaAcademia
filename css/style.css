@@ -30,6 +30,24 @@ body{
     color: #fff;
 }
 
+.principal_tela_tabela{
+    width: 1300px!important;
+
+}
+
+.title-qtd-pessoas{
+    font-size: 25px;
+    color: #000000;
+}
+
+.title-qtd-pessoas:hover{
+    color: #000000;
+}
+
+.div-interna-qtd{
+    margin-top: 20px;
+}
+
 #appearance-select{
     -webkit-appearance: none;  /* Remove estilo padrão do Chrome */
     -moz-appearance: none; /* Remove estilo padrão do FireFox */
@@ -60,6 +78,12 @@ body{
 .button-add-pessoa{
     float: right;
 }
+
+.button-add-local-treino{
+    float: right;
+    margin-top: 10px;
+
+}
 /*---------------------------------------------------*/
 
 /*-------------tela admin-----------*/
@@ -81,10 +105,15 @@ body{
 
 .admin-cad-escola{
     margin-top: 100px;
-    background-color: #67b3ff;
+    background-color: #145998;
     height: 300px;
     margin-left: 20px;
     border: 1px;
+    opacity: 5;
+}
+
+.admin-cad-escola:hover{
+    opacity: 0.6;
 }
 
 .admin-title-escola{
@@ -253,6 +282,21 @@ body{
 /*------------------Jumbotron------------*/
 .msg-jumbotron{
     color: #000000;
+}
+/*---------------------------------------*/
+
+/*-------------painel-----------------------*/
+.painel_qtd{
+    /*background-color: red;*/
+    height: 180px;
+    border-top: 2px solid #000;
+}
+
+.vlr_qtd{
+    text-align: center;
+    margin-top: 90px;
+    font-size: 40px;
+    color: #000;
 }
 
 

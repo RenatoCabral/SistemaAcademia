@@ -13,7 +13,7 @@ protegePagina(); // Chama a função que protege a página
     <?php include 'header-admin.php'; ?>
 
 
-    <div class="container">
+    <div class="container principal_tela_tabela">
         <?php
 
         include_once 'persistence/Daopessoa.php';
@@ -69,10 +69,8 @@ protegePagina(); // Chama a função que protege a página
                 $newId = ($lp->getId());
                 echo "<td>
                     <a href='tabelaPessoa.php?id=" . $newId . "&op=excluir'><button class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\" ></span>Excluir</button></a>
-                     <a href='AlterarCadastroPessoa.php?id=" . $newId . "&op=atualizar'><button class='btn btn-info'><span class=\"glyphicon glyphicon-pencil\"></span>Editar</button></a>
-                     <!--<a class='btn btn-default' data-toggle=\"modal\" data-target=\"#contact\" href='CadastroLocalTreino'>Cadastrar</a>-->
-                     
-         
+                    <a href='AlterarCadastroPessoa.php?id=" . $newId . "&op=atualizar'><button class='btn btn-info'><span class=\"glyphicon glyphicon-pencil\"></span>Editar</button></a>
+                                 
                     </td>
                     
                     </tr>";

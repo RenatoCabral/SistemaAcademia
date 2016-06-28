@@ -99,7 +99,7 @@ while ($linha=mysqli_fetch_array($result)) {
                     <!-- Button (Double) -->
                     <div class="form-group">
                         <div class="col-md-8">
-                            <a href="funcoes-local-treino.php" class="btn btn-danger" name="cancelar">Cancelar</a>
+                            <a href="tabela-local-treino.php" class="btn btn-danger" name="cancelar">Cancelar</a>
                             <button id="salvar" name="Salvar" class="btn btn-primary">Salvar</button>
                         </div>
                     </div>

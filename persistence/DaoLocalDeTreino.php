@@ -7,12 +7,10 @@ include_once $_SERVER['DOCUMENT_ROOT']. '/SistemaAcademia/persistence/bd/Conexao
 class DaoLocalDeTreino{
 
     public  static function inserir(LocalTreino $localtreino){
-        $sql = "INSERT INTO localdetreino (nome, endereco, cidade, estado) VALUES (:nome, :endereco, :cidade, :estado)";
+        $sql = "INSERT INTO localdetreino (nome, endereco) VALUES (:nome, :endereco)";
         $stmt = Conexao::getInstance()->prepare($sql);
         $stmt ->bindValue(':nome', utf8_encode($localtreino->getNome()), PDO::PARAM_STR);
         $stmt ->bindValue(':endereco', utf8_encode($localtreino->getEndereco()), PDO::PARAM_STR);
-        $stmt ->bindValue(':cidade', utf8_encode($localtreino->getCidade()), PDO::PARAM_STR);
-        $stmt ->bindValue(':estado', utf8_encode($localtreino->getEstado()), PDO::PARAM_STR);
 
         if($stmt->execute()){
 
@@ -32,24 +30,18 @@ class DaoLocalDeTreino{
             $localtreino = new LocalTreino();
             $localtreino->setId($vetor_localtreino['id'])
                         ->setNome($vetor_localtreino['nome'])
-                        ->setEndereco($vetor_localtreino['endereco'])
-                        ->setCidade($vetor_localtreino['cidade'])
-                        ->setEstado($vetor_localtreino['estado']);
-
+                        ->setEndereco($vetor_localtreino['endereco']);
             return $localtreino;
         }
     }
 
     public static function listarLocalTreino($coluna = "id"){
-        $sql = "SELECT id, nome, endereco, cidade, estado FROM localdetreino ORDER BY ". $coluna;
+        $sql = "SELECT id, nome, endereco FROM localdetreino ORDER BY ". $coluna;
         foreach(Conexao::getInstance()->query($sql) as $linha){
             $localtreino = new LocalTreino();
             $localtreino ->setId($linha['id'])
                          ->setNome($linha['nome'])
-                         ->setEndereco($linha['endereco'])
-                         ->setCidade($linha['cidade'])
-                        ->setEstado($linha['estado']);
-
+                         ->setEndereco($linha['endereco']);
             $vetor_localtreino[] = $localtreino;
         }
         return $vetor_localtreino;

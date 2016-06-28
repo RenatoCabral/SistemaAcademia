@@ -18,7 +18,7 @@ protegePagina(); // Chama a função que protege a página
        <div class="row">
                <div class="col-xs-6 col-md-4 div-fora">
                    <div class="div-dentro">
-                       <h2><a href="view/CadastroPessoa.php">Cadastro de Pessoas</a></h2>
+                       <h2><a href="tabelaPessoa.php">Cadastro de Pessoas</a></h2>
                    </div>
 
                </div>
@@ -33,7 +33,7 @@ protegePagina(); // Chama a função que protege a página
            </div>
            <div class="col-xs-6 col-md-4 div-fora">
                <div class="div-dentro">
-                   <h2><a href="funcoes-local-treino.php">Programas Marciais</a></h2>
+                   <h2><a href="tabela-local-treino.php">Programas Marciais</a></h2>
                </div>
 
            </div>
