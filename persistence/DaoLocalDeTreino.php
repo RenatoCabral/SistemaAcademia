@@ -22,7 +22,7 @@ class DaoLocalDeTreino{
     }
 
     public static function carregarDados($id){
-        $sql = "SELECT *FROM localdetreino WHERE id =: id";
+        $sql = "SELECT *FROM localdetreino WHERE id =:id";
         $stmt = Conexao::getInstance()->prepare($sql);
         $stmt->bindValue(":id", $id , PDO::PARAM_INT);
         if($stmt->execute()){
@@ -47,34 +47,28 @@ class DaoLocalDeTreino{
         return $vetor_localtreino;
     }
 
-    public static function excluir($id) {
-        $sql = "DELETE FROM localdetreino WHERE id = :id";
-        $stmt = Conexao::getInstance()->prepare($sql);
-        $stmt->bindValue(":id", $id , PDO::PARAM_INT);
-        $retorno = $stmt->execute();
-        if ($retorno){
-            if ($retorno -> rowCount()>0){
-                return true;
-            }
+    public static function delete($id) {
+        $query = "DELETE FROM localdetreino WHERE id = :id";
+        $stmt = Conexao::getInstance()->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        if ($stmt->execute()) {
+            return true;
+        } else {
             return false;
         }
     }
 
-//    public static function alterar(LocalTreino $localtreino) {
-//        $sql = "UPDATE localdetreino SET nome ='".$nome."', endereco= '".$endereco."' cidade= '".$cidade."' estado= '".$estado."' WHERE id=".$id;
-//        $stmt = Conexao::getInstance()->prepare($sql);
-//        $stmt->bindValue(":nome", utf8_decode($localtreino->getNome()), PDO::PARAM_STR);
-//        $stmt->bindValue(":endereco", utf8_decode($localtreino->getEndereco()), PDO::PARAM_STR);
-//        $stmt->bindValue(":cidade", utf8_decode($localtreino->getCidade()), PDO::PARAM_STR);
-//        $stmt->bindValue(":estado", utf8_decode($localtreino->getEstado()), PDO::PARAM_STR);
-//        $stmt->bindValue(":id", $localtreino->getId(), PDO::PARAM_INT);
-//        if ($stmt->execute()){
-//            return true;
-//        }else{
-//            return false;
-//        }
-//    }
-
-
+    public static function alterar(LocalTreino $localtreino) {
+        $sql = "UPDATE localdetreino SET nome =:nome , endereco=:endereco WHERE id=:id";
+        $stmt = Conexao::getInstance()->prepare($sql);
+        $stmt->bindValue(":nome", utf8_decode($localtreino->getNome()), PDO::PARAM_STR);
+        $stmt->bindValue(":endereco", utf8_decode($localtreino->getEndereco()), PDO::PARAM_STR);
+        $stmt->bindValue(":id", $localtreino->getId(), PDO::PARAM_INT);
+        if ($stmt->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 

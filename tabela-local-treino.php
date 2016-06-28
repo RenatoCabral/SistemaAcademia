@@ -41,8 +41,6 @@ protegePagina(); // Chama a função que protege a página
             
             <th>Nome</th>
             <th>Endereco</th>
-            <!--<th>Cidade</th>
-            <th>Estado</th>-->
             <th>Ações</th>
         </tr>
         </thead>
@@ -52,14 +50,11 @@ protegePagina(); // Chama a função que protege a página
 
             echo "<tr><td>" .utf8_decode($lt->getNome()) ."</td>";
             echo "<td>" . utf8_decode($lt->getEndereco()) . "</td>";
-            /*echo "<td>" . utf8_decode($lt->getCidade()) . "</td>";
-            echo "<td>" . utf8_decode($lt->getEstado()) . "</td>";*/
             $newId = ($lt->getId());
 
             echo "<td>
-                    <!--<a class='btn btn-danger' href='tabela-local-treino.php?id=". $newId . "&op=excluir'>Excluir</a>-->
-                    <!--<a class='btn btn-primary'  href='FormAlteraLocalTreino.php?id=/*" .$newId. "'*/>Editar</a>-->
-                    <a href='tabela-local-treino?id=" . $newId . "&op=excluir'><button class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\" ></span>Excluir</button></a>
+         
+                    <a href='tabela-local-treino.php?id=" . $newId . "&op=excluir'><button class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\" ></span>Excluir</button></a>
                     <a href='altera-local-treino.php?id=" . $newId . "&op=atualizar'><button class='btn btn-info'><span class=\"glyphicon glyphicon-pencil\"></span>Editar</button></a>
                               
                   </td>
@@ -81,9 +76,40 @@ protegePagina(); // Chama a função que protege a página
         }
         ?>
 
-        <?php include 'CadastroLocalTreino.php'; ?>
+        <?php
+            if (isset($_GET['op'])) {
+            if ($_GET['op'] == 'excluir') {
+            if (DaoLocalDeTreino::delete($_GET['id'])) {
 
-        <?php include 'FormAlteraLocalTreino.php'; ?>
+        ?>
+
+                <br><br>
+                <script>
+                    swal({
+                            title: "Are you sure?",
+                            text: "You will not be able to recover this imaginary file!",
+                            type: "warning",
+                            showCancelButton: true,
+                            confirmButtonColor: "#DD6B55",
+                            confirmButtonText: "Yes, delete it!",
+                            closeOnConfirm: false
+                        },
+                        function(){
+                            swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                            window.location.href = 'tabela-local-treino.php';
+                        });
+                </script>
+
+                <?php
+            }
+                /*    echo 'excluido com sucesso';
+                } else {
+                    echo 'Erro ao excluir';
+                }*/
+            }
+
+            }
+        ?>
 
 
 <?php include 'footer.php'; ?>

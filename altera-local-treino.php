@@ -1,46 +1,172 @@
-<?php include 'header.php';?>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
 
 <?php
-$bd_host = "localhost";
-$db_usuario = "root";
-$db_password = "";
-$db_name = "sistema_academia";
 
-$conection = mysqli_connect($bd_host, $db_usuario, $db_password, $db_name) or die(mysqli_error($conection));
-$db = mysqli_select_db($conection, $db_name) or die(mysqli_error($conection));
+include("seguranca.php"); // Inclui o arquivo com o sistema de segurança
+protegePagina(); // Chama a função que protege a página
 
-$id = $_POST['id'];
-$nome = $_POST['nome'];
-$endereco = $_POST['endereco'];
-$cidade = $_POST['cidade'];
-$estado= $_POST['estado'];
+//include 'header.php';
+//echo "Olá, " . $_SESSION['usuarioNome'];
 
-$update_sql = ("UPDATE localdetreino SET nome='".$nome."', endereco= '".$endereco."', cidade= '".$cidade."', estado= '".$estado."' WHERE id=" . $id);
-mysqli_query($conection, $update_sql);
+include_once 'persistence/DaoLocalDeTreino.php';
+$localtreino = new LocalTreino();
+$alterar = false;
+
+if(isset($_POST['Salvar'])) {
+
+    $localtreino->setNome($_POST['nome']);
+    $localtreino->setEndereco($_POST['endereco']);
+    if (DaoLocalDeTreino::inserir($localtreino)) {
+
+        //$redirect = "../tabelaPessoa.php";
+        //header("location: $redirect");
+
+        ?>
+        <!--
+                <br/><br/>
+                <script>
+                    swal({
+                            title: "Cadastro feito com sucesso!",
+                            text: "Você será redirecionado para a página principal, para acessar clicar em Entrar!",
+                            timer: 3000,
+                            showConfirmButton: false
+                        },
+                        function(){
+                            window.location.href = '../tabelaPessoa.php';
+                        });
+                </script>
+        -->
+        <?php
+    }
+}
+if (isset($_GET)){
+    if (isset($_GET['op'])== 'atualizar'){
+        $alterar = true;
+        
+        $localtreino = DaoLocalDeTreino::carregarDados($_GET['id']);
+    }
+}
+
 ?>
 
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sistema Acadêmia</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/modern-business.css">
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
 
-<?php include 'footer.php'?>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <?php include 'sidebar.php';?>
+    <?php include 'header-admin.php'; ?>
+
+    <div class="container">
+
+        <div class="row">
+
+            <form class="form-horizontal" name="formCadastro" method="post">
+                <fieldset class="tela_cadastro">
+
+                    <!-- Form Name -->
+                    <legend class="title_cadPessoa">Alterar Local de Treino</legend>
+
+                    <!-- Appended Input-->
+
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <a href="tabela-local-treino.php" class="btn btn-default" name="voltar"><span class="glyphicon glyphicon-arrow-left"></span>Voltar</a>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="nome">Nome</label>
+                        <div class="col-md-6">
+                            <input id="nome" name="nome" type="text" placeholder="nome" class="form-control input-md" value="<?php echo $localtreino->getNome(); ?>"/>
+
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="endereco">Endereço</label>
+                        <div class="col-md-6">
+                            <input id="endereco" name="endereco" type="text" placeholder="endereço" class="form-control input-md" value="<?php echo $localtreino->getEndereco(); ?>"/>
+
+                        </div>
+                    </div>
+
+                    <!-- Button (Double) -->
+                    <div class="form-group">
+                        <div class="col-md-8">
+                            <a href="tabela-local-treino.php" class="btn btn-danger" name="cancelar"><span class="glyphicon glyphicon-remove"></span>Cancelar</a>
+                            <button id="Salvar" name="Salvar" class="btn btn-primary"><span class="glyphicon glyphicon-floppy-saved"></span>Salvar</button>
+                        </div>
+                    </div>
+                    <hr>
+
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="/js/jquery-2.2.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/sweetalert.min.js"></script>
 
 
-<script>
-    swal({
-            title: "Local de Treino Alterado com sucesso!",
-            /*text: "Você será redirecionado para a página principal, para acessar clicar em Entrar!",*/
-            timer: 1000,
-            showConfirmButton: false
-        },
-        function(){
-            window.location.href = 'tabela-local-treino.php';
+    <!-- Script to Activate the Carousel -->
+
+    <script>
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
+
+
+        <!--busca-->
+
+        $('#filter').keyup(function () {
+
+            var rex = new RegExp($(this).val(), 'i');
+            $('.searchable tr').hide();
+            $('.searchable tr').filter(function () {
+                return rex.test($(this).text());
+            }).show();
+
+        })
+
+        <!-- Menu Toggle Script -->
+
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
         });
-    /*swal({
-        title: "Alterado",
-        text: "Local de treino alterado!",
-        type: "success"
-    },
-    function(){
-        window.location.href = 'funcoes-local-treino.php';
-    });*/
-</script>
+    </script>
+
+</body>
+
+</html>
+
+
+
+

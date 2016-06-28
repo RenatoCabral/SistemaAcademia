@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8d08de7b-18c9-4e0e-bbf8-dfa490422c01" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tabela_escola.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/funcoes-local-treino.php" afterPath="$PROJECT_DIR$/tabela-local-treino.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/beans/Escola.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/AlterarLocalDeTreino.php" afterPath="$PROJECT_DIR$/altera-local-treino.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AlterarCadastroPessoa.php" afterPath="$PROJECT_DIR$/AlterarCadastroPessoa.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CadastroLocalTreino.php" afterPath="$PROJECT_DIR$/CadastroLocalTreino.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CadastrosAdmin.php" afterPath="$PROJECT_DIR$/CadastrosAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FormAlteraLocalTreino.php" afterPath="$PROJECT_DIR$/FormAlteraLocalTreino.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/administrador.php" afterPath="$PROJECT_DIR$/administrador.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/altera-local-treino.php" afterPath="$PROJECT_DIR$/altera-local-treino.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/persistence/DaoLocalDeTreino.php" afterPath="$PROJECT_DIR$/persistence/DaoLocalDeTreino.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sidebar.php" afterPath="$PROJECT_DIR$/sidebar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tabelaPessoa.php" afterPath="$PROJECT_DIR$/tabelaPessoa.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tabela-local-treino.php" afterPath="$PROJECT_DIR$/tabela-local-treino.php" />
     </list>
     <ignored path="SistemaAcademia.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,70 +30,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="altera-local-treino.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/altera-local-treino.php">
+      <file leaf-file-name="administrador.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/administrador.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+            <state relative-caret-position="198">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
               <folding>
-                <marker date="1467077810927" expanded="true" signature="472:503" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:513" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:526" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:540" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:551" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:563" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:574" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:586" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:596" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:664" ph="UPDATE local... " />
-                <marker date="1467077810927" expanded="true" signature="472:665" ph="UPDATE local... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CadastroLocalTreino.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CadastroLocalTreino.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DaoLocalDeTreino.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/persistence/DaoLocalDeTreino.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
-              <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
-              <folding>
-                <marker date="1467078448561" expanded="true" signature="282:350" ph="INSERT INTO LocalDeTreino... " />
-                <marker date="1467078448561" expanded="true" signature="775:816" ph="SELECT *FROM... LocalDeTreino" />
-                <marker date="1467078448561" expanded="true" signature="1389:1396" ph="SELECT *FROM... LocalDeTreino" />
-                <marker date="1467078448561" expanded="true" signature="1389:1442" ph="SELECT id, n... LocalDeTreino" />
-                <marker date="1467078448561" expanded="true" signature="1389:1443" ph="SELECT nome,... LocalDeTreino" />
-                <marker date="1467078448561" expanded="true" signature="1882:1922" ph="DELETE FROM " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tabela-local-treino.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tabela-local-treino.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-              <folding>
-                <marker date="1467077990185" expanded="true" signature="1721:1805" ph="..." />
-                <marker date="1467077990185" expanded="true" signature="1721:1899" ph="..." />
-                <marker date="1467077990185" expanded="true" signature="1721:1905" ph="..." />
-                <marker date="1467077990185" expanded="true" signature="1721:1933" ph="..." />
-                <marker date="1467077990185" expanded="true" signature="1721:1945" ph="..." />
-                <marker date="1467077990185" expanded="true" signature="1721:1946" ph="..." />
-                <marker date="1467077990185" expanded="true" signature="1721:2354" ph="..." />
-                <marker date="1467077990185" expanded="true" signature="1721:2386" ph="..." />
-                <marker date="1467077990185" expanded="true" signature="1721:2433" ph="..." />
+                <marker date="1467084381923" expanded="true" signature="1631:1650" ph="SELECT *FROM... pessoa" />
+                <marker date="1467084381923" expanded="true" signature="2216:2242" ph="SELECT *FROM... localdetreino" />
               </folding>
             </state>
           </provider>
@@ -108,8 +46,18 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="361">
+              <caret line="117" column="2" selection-start-line="117" selection-start-column="2" selection-end-line="117" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Escola.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/beans/Escola.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -132,8 +80,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/deslogar.php" />
         <option value="$PROJECT_DIR$/user.php" />
         <option value="$PROJECT_DIR$/admin.php" />
         <option value="$PROJECT_DIR$/admin2.php" />
@@ -154,7 +100,6 @@
         <option value="$PROJECT_DIR$/OpLocalDeTreino.php" />
         <option value="$PROJECT_DIR$/modal-altera-local-treino.php" />
         <option value="$PROJECT_DIR$/cadastro-local-treino.php" />
-        <option value="$PROJECT_DIR$/altera-local-treino.php" />
         <option value="$PROJECT_DIR$/beans/ProgramaMarciais.php" />
         <option value="$PROJECT_DIR$/beans/Alunos.php" />
         <option value="$PROJECT_DIR$/CadAlteraLocalTreino.php" />
@@ -176,13 +121,16 @@
         <option value="$PROJECT_DIR$/CadastrosAdmin.php" />
         <option value="$PROJECT_DIR$/AlterarCadastroPessoa.php" />
         <option value="$PROJECT_DIR$/sidebar.php" />
-        <option value="$PROJECT_DIR$/administrador.php" />
         <option value="$PROJECT_DIR$/funcoes-local-treino.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/tabelaPessoa.php" />
-        <option value="$PROJECT_DIR$/tabela-local-treino.php" />
         <option value="$PROJECT_DIR$/CadastroLocalTreino.php" />
+        <option value="$PROJECT_DIR$/AlterarLocalDeTreino.php" />
+        <option value="$PROJECT_DIR$/altera-local-treino.php" />
         <option value="$PROJECT_DIR$/persistence/DaoLocalDeTreino.php" />
+        <option value="$PROJECT_DIR$/tabela-local-treino.php" />
+        <option value="$PROJECT_DIR$/administrador.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/beans/Escola.php" />
       </list>
     </option>
   </component>
@@ -255,21 +203,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SistemaAcademia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SistemaAcademia" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="persistence" />
+              <option name="myItemId" value="beans" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -294,9 +228,9 @@
       <recent name="$PROJECT_DIR$/bd" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/persistence" />
       <recent name="$PROJECT_DIR$/view" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunManager">
@@ -348,18 +282,18 @@
       <workItem from="1466005098800" duration="12574000" />
       <workItem from="1466027869827" duration="60282000" />
       <workItem from="1466439087267" duration="41580000" />
-      <workItem from="1466960607116" duration="17055000" />
+      <workItem from="1466960607116" duration="23117000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181881000" />
+    <option name="totallyTimeSpent" value="187943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="306" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2840909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23863636" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -413,8 +347,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/menu.js" />
-    <entry file="file://$PROJECT_DIR$/login/valida.php" />
     <entry file="file://$PROJECT_DIR$/login/login.php" />
     <entry file="file://$PROJECT_DIR$/css/estilo.css" />
     <entry file="file://$PROJECT_DIR$/login.php" />
@@ -449,15 +381,10 @@
         <state relative-caret-position="1170">
           <caret line="65" column="39" selection-start-line="65" selection-start-column="39" selection-end-line="65" selection-end-column="39" />
           <folding>
-            <marker date="1467077990185" expanded="true" signature="1721:1805" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1899" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1905" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1933" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1945" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1946" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:2354" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:2386" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:2433" ph="..." />
+            <marker date="1467081344278" expanded="true" signature="1520:1531" ph="..." />
+            <marker date="1467081344278" expanded="true" signature="1520:1924" ph="..." />
+            <marker date="1467081344278" expanded="true" signature="1520:1956" ph="..." />
+            <marker date="1467081344278" expanded="true" signature="1520:2003" ph="..." />
           </folding>
         </state>
       </provider>
@@ -559,20 +486,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/DaoPessoa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1854">
-          <caret line="103" column="1" selection-start-line="103" selection-start-column="1" selection-end-line="103" selection-end-column="1" />
-          <folding>
-            <marker date="1466553164144" expanded="true" signature="261:461" ph="INSERT INTO pessoa... " />
-            <marker date="1466553164144" expanded="true" signature="1526:1754" ph="UPDATE pesso... " />
-            <marker date="1466553164144" expanded="true" signature="2876:2911" ph="SELECT * FRO... pessoa" />
-            <marker date="1466553164144" expanded="true" signature="3820:3933" ph="SELECT id, n... pessoa" />
-            <marker date="1466553164144" expanded="true" signature="4702:4735" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistence/DaoEstados.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -581,14 +494,6 @@
             <marker date="1466556622182" expanded="true" signature="267:304" ph="SELECT id, n... estados" />
             <marker date="1466556622182" expanded="true" signature="267:305" ph="SELECT id, n... estados" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/beans/Estados.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -630,29 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/Daopessoa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding>
-            <marker date="1466967448481" expanded="true" signature="339:562" ph="INSERT INTO pessoa... " />
-            <marker date="1466967448481" expanded="true" signature="1702:1951" ph="UPDATE pesso... " />
-            <marker date="1466967448481" expanded="true" signature="3147:3182" ph="SELECT * FRO... pessoa" />
-            <marker date="1466967448481" expanded="true" signature="3201:3327" ph="SELECT p. *,... pessoa" />
-            <marker date="1466967448481" expanded="true" signature="4421:4526" ph="SELECT id, n... pessoa" />
-            <marker date="1466967448481" expanded="true" signature="5297:5330" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AlterarCadastroPessoa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="169" column="55" selection-start-line="169" selection-start-column="55" selection-end-line="169" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/persistence/bd/Conexao.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -677,49 +559,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/administrador.php">
+    <entry file="file://$PROJECT_DIR$/altera-local-treino.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="47" column="51" selection-start-line="47" selection-start-column="51" selection-end-line="47" selection-end-column="51" />
-          <folding>
-            <marker date="1467076589858" expanded="true" signature="980:999" ph="SELECT *FROM... pessoa" />
-            <marker date="1467076589858" expanded="true" signature="1529:1555" ph="SELECT *FROM... localdetreino" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/altera-local-treino.php">
+    <entry file="file://$PROJECT_DIR$/persistence/DaoPessoa.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+        <state relative-caret-position="582">
+          <caret line="81" column="49" selection-start-line="81" selection-start-column="49" selection-end-line="81" selection-end-column="49" />
           <folding>
-            <marker date="1467077810927" expanded="true" signature="472:503" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:513" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:526" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:540" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:551" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:563" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:574" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:586" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:596" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:664" ph="UPDATE local... " />
-            <marker date="1467077810927" expanded="true" signature="472:665" ph="UPDATE local... " />
+            <marker date="1466553164144" expanded="true" signature="261:461" ph="INSERT INTO pessoa... " />
+            <marker date="1466553164144" expanded="true" signature="1526:1754" ph="UPDATE pesso... " />
+            <marker date="1466553164144" expanded="true" signature="2876:2911" ph="SELECT * FRO... pessoa" />
+            <marker date="1466553164144" expanded="true" signature="3820:3933" ph="SELECT id, n... pessoa" />
+            <marker date="1466553164144" expanded="true" signature="4702:4735" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/cadastropessoa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-233">
+          <caret line="222" column="46" selection-start-line="222" selection-start-column="46" selection-end-line="222" selection-end-column="46" />
+          <folding>
+            <marker date="1466967746263" expanded="false" signature="6820:6841" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tabelaPessoa.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+        <state relative-caret-position="126">
+          <caret line="97" column="26" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
           <folding>
             <marker date="1467077984593" expanded="true" signature="280:300" ph="..." />
             <marker date="1467077984593" expanded="true" signature="409:446" ph="..." />
@@ -732,54 +607,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tabela-local-treino.php">
+    <entry file="file://$PROJECT_DIR$/AlterarCadastroPessoa.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+        <state relative-caret-position="2256">
+          <caret line="169" column="55" selection-start-line="169" selection-start-column="55" selection-end-line="169" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/persistence/Daopessoa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="113" column="5" selection-start-line="104" selection-start-column="4" selection-end-line="113" selection-end-column="5" />
           <folding>
-            <marker date="1467077990185" expanded="true" signature="1721:1805" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1899" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1905" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1933" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1945" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:1946" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:2354" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:2386" ph="..." />
-            <marker date="1467077990185" expanded="true" signature="1721:2433" ph="..." />
+            <marker date="1466967448481" expanded="true" signature="339:562" ph="INSERT INTO pessoa... " />
+            <marker date="1466967448481" expanded="true" signature="1702:1951" ph="UPDATE pesso... " />
+            <marker date="1466967448481" expanded="true" signature="3147:3182" ph="SELECT * FRO... pessoa" />
+            <marker date="1466967448481" expanded="true" signature="3201:3327" ph="SELECT p. *,... pessoa" />
+            <marker date="1466967448481" expanded="true" signature="4421:4526" ph="SELECT id, n... pessoa" />
+            <marker date="1466967448481" expanded="true" signature="5297:5330" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/cadastropessoa.php">
+    <entry file="file://$PROJECT_DIR$/persistence/DaoLocalDeTreino.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="222" column="46" selection-start-line="222" selection-start-column="46" selection-end-line="222" selection-end-column="46" />
+        <state relative-caret-position="143">
+          <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
           <folding>
-            <marker date="1466967746263" expanded="false" signature="6820:6841" ph="..." />
+            <marker date="1467081241805" expanded="true" signature="282:350" ph="INSERT INTO LocalDeTreino... " />
+            <marker date="1467081241805" expanded="true" signature="775:815" ph="SELECT *FROM... LocalDeTreino" />
+            <marker date="1467081241805" expanded="true" signature="1388:1395" ph="SELECT *FROM... LocalDeTreino" />
+            <marker date="1467081241805" expanded="true" signature="1388:1441" ph="SELECT id, n... LocalDeTreino" />
+            <marker date="1467081241805" expanded="true" signature="1388:1442" ph="SELECT nome,... LocalDeTreino" />
+            <marker date="1467081241805" expanded="true" signature="1882:1922" ph="DELETE FROM " />
+            <marker date="1467081241805" expanded="true" signature="2232:2268" ph="UPDATE local... " />
+            <marker date="1467081241805" expanded="true" signature="2232:2289" ph="UPDATE local... " />
+            <marker date="1467081241805" expanded="true" signature="2232:2299" ph="UPDATE local... " />
+            <marker date="1467081241805" expanded="true" signature="2232:2302" ph="UPDATE local... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CadastroLocalTreino.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="76" column="50" selection-start-line="76" selection-start-column="50" selection-end-line="76" selection-end-column="50" />
+        <state relative-caret-position="810">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistence/DaoLocalDeTreino.php">
+    <entry file="file://$PROJECT_DIR$/altera-local-treino.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="43" column="59" selection-start-line="43" selection-start-column="59" selection-end-line="43" selection-end-column="59" />
+        <state relative-caret-position="84">
+          <caret line="103" column="117" selection-start-line="103" selection-start-column="88" selection-end-line="103" selection-end-column="117" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/administrador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding>
-            <marker date="1467078448561" expanded="true" signature="282:350" ph="INSERT INTO LocalDeTreino... " />
-            <marker date="1467078448561" expanded="true" signature="775:816" ph="SELECT *FROM... LocalDeTreino" />
-            <marker date="1467078448561" expanded="true" signature="1389:1396" ph="SELECT *FROM... LocalDeTreino" />
-            <marker date="1467078448561" expanded="true" signature="1389:1442" ph="SELECT id, n... LocalDeTreino" />
-            <marker date="1467078448561" expanded="true" signature="1389:1443" ph="SELECT nome,... LocalDeTreino" />
-            <marker date="1467078448561" expanded="true" signature="1882:1922" ph="DELETE FROM " />
+            <marker date="1467084381923" expanded="true" signature="1631:1650" ph="SELECT *FROM... pessoa" />
+            <marker date="1467084381923" expanded="true" signature="2216:2242" ph="SELECT *FROM... localdetreino" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tabela-local-treino.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-305">
+          <caret line="0" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <marker date="1467081344278" expanded="true" signature="1520:1531" ph="..." />
+            <marker date="1467081344278" expanded="true" signature="1520:1924" ph="..." />
+            <marker date="1467081344278" expanded="true" signature="1520:1956" ph="..." />
+            <marker date="1467081344278" expanded="true" signature="1520:2003" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="117" column="2" selection-start-line="117" selection-start-column="2" selection-end-line="117" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beans/Estados.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/beans/Escola.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
 <?php
 
 include ("header.php");
@@ -14,15 +16,23 @@ protegePagina(); // Chama a função que protege a página
     <?php include 'header-admin.php'; ?>
 
 
-    <div class="col-sm-6 col-md-4 admin-cad-escola">
-        <div class="admin-title-escola">
-            <a href="CadastrosAdmin.php" class="nome-escola">S.I.G.L.A - Nome da Escola de Artes Marciais</a>
+    <div class="col-sm-7 admin-cad-escola">
+        <div class="col-sm-12 div-interna-qtd">
+            <a class='btn btn-default' href='CadastroLocalTreino.php'><span class="glyphicon glyphicon-pencil"></span>Editar</a>
+            <a class="title-qtd-pessoas" href="CadastrosAdmin.php">S.I.G.L.A - Nome da Escola de Artes Marciais</a>
+            <form action="" class="form-painel-escola">
+                <label class="label-painel" for="">S.I.G.L.A</label>
+                <input type="text" name="sigla" id="sigla" class="form-control input-md" placeholder="S.I.G.L.A">
+                <label class="label-painel" for="">Nome</label>
+                <input type="text" name="nome" id="nome" class="form-control input-md" placeholder="Nome">
+            </form>
+
         </div>
     </div>
 
     <div class="col-sm-6 col-md-2 admin-cad-escola">
         <div class="col-sm-12 div-interna-qtd">
-            <h2><a class="title-qtd-pessoas" href="tabelaPessoa.php">Quantidade de pessoas cadastradas</a></h2>
+            <h2><a class="title-qtd-pessoas" href="tabelaPessoa.php">Pessoas cadastradas</a></h2>
         </div>
 
         <div class=" col-sm-12 painel_qtd">
@@ -37,7 +47,7 @@ protegePagina(); // Chama a função que protege a página
 
     <div class="col-sm-6 col-md-2 admin-cad-escola">
         <div class="col-sm-12 div-interna-qtd">
-            <h2 class="title-qtd-pessoas">Quantidade de locais de treino</h2>
+            <h2><a class="title-qtd-pessoas" href="tabela-local-treino.php">Locais de treino cadastrados</a></h2>
         </div>
 
         <div class=" col-sm-12 painel_qtd">

@@ -109,13 +109,13 @@ body{
     height: 300px;
     margin-left: 20px;
     border: 1px;
-    opacity: 5;
+    /*opacity: 5;*/
 }
-
+/*
 .admin-cad-escola:hover{
     opacity: 0.6;
 }
-
+*/
 .admin-title-escola{
     height: 150px;
     background-color: #3b5998;
@@ -299,5 +299,14 @@ body{
     color: #000;
 }
 
+.form-painel-escola{
+    border-top: 2px solid #000;
+    margin-top: 10px;
+
+}
+
+.label-painel{
+    margin-top: 10px;
+}
 
 
