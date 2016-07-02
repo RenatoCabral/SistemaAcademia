@@ -160,7 +160,9 @@ if (isset($_GET)){
 
                     <div class="form-group">
                         <label for="estados" class="col-md-4 control-label">Estados</label>
+
                         <?php
+
                         echo "<select name='estados'>";
                         echo "<option>Selecione</option>";
                         foreach ($lista_estados as $e){
@@ -171,7 +173,9 @@ if (isset($_GET)){
                             }
                         }
                         echo "</select>";
+
                         ?>
+
                     </div>
 
                     <!-- Password input-->

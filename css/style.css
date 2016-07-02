@@ -13,7 +13,7 @@
 
 body{
     padding-top: inherit!important;
-    /*background-color: rgba(210, 210, 210, 0.19) !important;*/
+    background-color: rgba(210, 210, 210, 0.19) !important;
     /*background-color: #EEE!important;*/
 
 
@@ -67,22 +67,19 @@ body{
 
 .btn-danger, .btn-primary,.btn-default, .btn-info{
     font-size: 23px;
-
 }
 
-.btn-default{
-    float: right;
-
-}
-
-.button-add-pessoa{
+.button-add-pessoa, .button-add-local-treino, .btn-default{
     float: right;
 }
 
-.button-add-local-treino{
-    float: right;
-    margin-top: 10px;
+.div-btn-add{
+    margin-bottom: 15px;
+}
 
+.btn-add{
+    float: right;
+    margin-right: 4%;
 }
 /*---------------------------------------------------*/
 
@@ -104,7 +101,8 @@ body{
 }
 
 .admin-cad-escola{
-    margin-top: 100px;
+    /*margin-top: 100px;*/
+    margin-top: 30px;
     background-color: #145998;
     height: 300px;
     margin-left: 20px;
@@ -309,4 +307,43 @@ body{
     margin-top: 10px;
 }
 
+.div-painel-table-escola{
+    margin-top: 10px;
+    border-top: 2px solid #000000;
+}
 
+.table-painel-escola{
+    margin-top: 20px;
+}
+
+.tbody-painel-escola{
+    background-color: #ffffff;
+}
+
+#tabelaSistema_filter{
+    display: none!important;
+}
+
+/*---------------cadastro artes--------*/
+.label-cad-tipoprograma{
+    margin-left: 80px;
+}
+
+.form-select{
+    padding: 10px;
+    border-radius: 7px;
+    margin-right: 20px;
+    width: 20%;
+}
+.form-control{
+    width: 60% !important;
+}
+
+/*-----------media query---*/
+@media screen and (min-width: 1300px) {
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+        width: 100%;
+    }
+}

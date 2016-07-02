@@ -11,7 +11,7 @@
             </a>
         </li>
         <li class="li-externa-sidebar">
-           <a href="administrador.php">
+           <a href="painel-adm.php">
                <i class="fa fa-desktop fa-lg" style="font-size: 24px"></i>Painel
 
            </a>
@@ -33,7 +33,7 @@
             </a>
         </li>
         <li class="li-externa-sidebar">
-            <a href="#">
+            <a href="tabela-artes-marciais.php">
             <i class="fa fa-graduation-cap fa-lg" style="font-size: 24px"></i>Artes Marciais
             </a>
         </li>

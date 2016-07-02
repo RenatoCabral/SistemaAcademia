@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         }else{
             echo "tem e permissao é: ".$resultado['permissao'];
             if($resultado['permissao'] == 1)//é admin
-                header("Location: administrador.php");
+                header("Location: painel-adm.php");
             if($resultado['permissao'] == 2)//é user
                 header("Location: user.php");
             return true;

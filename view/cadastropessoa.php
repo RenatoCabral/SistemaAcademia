@@ -16,15 +16,20 @@ $alterar = false;
 $lista_estados = DaoEstados::listarEstados();
 
 if(isset($_POST['Salvar'])) {
+    if (isset($_FILES['foto'])){
+        $extensao = strtolower(substr($_FILES['foto']['name'], -4));
+        $novonome = md5(time()) . $extensao;
+        $diretorio = "/home/renato/Imagens";
+        move_uploaded_file($_FILES['foto']['tmp_name'], $diretorio.$novonome);
+    }
 
-    $pessoa->setFoto($_POST['foto']);
+    $pessoa->setFoto($_POST[$novonome]);
     $pessoa->setNome($_POST['nome']);
     $pessoa->setEndereco($_POST['endereco']);
     $pessoa->setNumero($_POST['numero']);
     $pessoa->setBairro($_POST['bairro']);
     $pessoa->setComplemento($_POST['complemento']);
     $pessoa->setCidade($_POST['cidade']);
-    //$pessoa->setEstado($_POST['estado']);
     $pessoa->setDataCadastro($_POST['data_cadastro']);
     $pessoa->getEstados()->setId($_POST['estados']);
     if (DaoPessoa::inserir($pessoa)) {
@@ -70,7 +75,7 @@ if (isset($_GET)){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sistema Acadêmia</title>
+    <title>Cadastro de Pessoas</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
@@ -93,7 +98,7 @@ if (isset($_GET)){
 
         <div class="row">
 
-            <form class="form-horizontal" name="formCadastro" method="post" action="cadastropessoa.php">
+            <form class="form-horizontal" name="formCadastro" method="post" action="cadastropessoa.php" enctype="multipart/form-data">
                 <fieldset class="tela_cadastro">
 
                     <!-- Form Name -->
@@ -111,8 +116,7 @@ if (isset($_GET)){
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="foto">Foto</label>
                         <div class="col-md-6">
-                            <input id="foto" name="foto" type="file" placeholder="Foto" class="form-control input-md" value="<?php echo $pessoa->getFoto(); ?>"/>
-
+                            <input id="foto" name="foto" type="file" placeholder="Foto" class="form-control input-md"/>
                         </div>
                     </div>
 
@@ -172,43 +176,6 @@ if (isset($_GET)){
                         ?>
                     </div>
 
-                    <!--
-                    <div class="form-group">
-                        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-bottom: 10px;">
-                            <label class="col-md-4 control-label" for="estado">Estado:</label>
-                            <select name="estado" id="appearance-select">
-                                <option>Selecione</option>
-                                <option value="AC">Acre</option>
-                                <option value="AL">Alagoas</option>
-                                <option value="AP">Amapa</option>
-                                <option value="AM">Amazonas</option>
-                                <option value="BA">Bahia</option>
-                                <option value="CE">Ceara</option>
-                                <option value="DF">Distrito Federal</option>
-                                <option value="ES">Espirito Santo</option>
-                                <option value="GO">Goias</option>
-                                <option value="MA">Maranhao</option>
-                                <option value="MT">Mato Grosso</option>
-                                <option value="MS">Mato Grosso do Sul</option>
-                                <option value="MG">Minas Gerais</option>
-                                <option value="PA">Para</option>
-                                <option value="PB">Paraiba</option>
-                                <option value="PR">Parana</option>
-                                <option value="PE">Pernambuco</option>
-                                <option value="PI">Piaui</option>
-                                <option value="RJ">Rio de Janeiro</option>
-                                <option value="RN">Rio Grande do Norte</option>
-                                <option value="RS">Rio Grande do Sul</option>
-                                <option value="RO">Rondonia</option>
-                                <option value="RR">Roraima</option>
-                                <option value="SC">Santa Catarina</option>
-                                <option value="SP">Sao Paulo</option>
-                                <option value="SE">Sergipe</option>
-                                <option value="TO">Tocantins</option>
-                            </select>
-                        </div>
-                    </div>
-                    -->
 
                     <!-- Password input-->
                     <div class="form-group">
@@ -233,10 +200,8 @@ if (isset($_GET)){
                         </div>
                     </div>
                     <hr>
-
                 </fieldset>
             </form>
-
         </div>
     </div>
 

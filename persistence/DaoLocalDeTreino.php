@@ -37,6 +37,8 @@ class DaoLocalDeTreino{
 
     public static function listarLocalTreino($coluna = "id"){
         $sql = "SELECT id, nome, endereco FROM localdetreino ORDER BY ". $coluna;
+        $stmt = Conexao::getInstance()->prepare($sql);
+        $vetor_localtreino = $stmt->fetch(PDO::FETCH_ASSOC);
         foreach(Conexao::getInstance()->query($sql) as $linha){
             $localtreino = new LocalTreino();
             $localtreino ->setId($linha['id'])
